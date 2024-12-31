@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+</head>
+<body style="background-color: #414141; color:aliceblue;">
+    <h2>Amazing images</h2>
+        <div>
+            <ul id="images">
+                <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/163347/war-desert-guns-gunshow-163347.jpeg?auto=compress&cs=tinysrgb&w=600" alt="photoshop"></li>
+                <li><img width="200px" id="japan" src="https://images.pexels.com/photos/2438/nature-forest-waves-trees.jpg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+                <li><img width="200px" id="river" src="https://images.pexels.com/photos/2187605/pexels-photo-2187605.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+                <li><img width="200px" id="owl" src="https://images.pexels.com/photos/206676/pexels-photo-206676.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+                <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2730217/pexels-photo-2730217.jpeg?auto=compress&cs=tinysrgb&w=600" alt=""></li>
+                <li><a style="color: aliceblue;" href="http://google.com" id="google">Google</a></li>
+            </ul>
+        </div>
+</body>
+<script>
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // }
+
+    // another approach is using attachEvent() but it was used in earlier days.
+    // jQuery framework ka on eventListener
+
+    // Events to study by yourself :
+    // type, timeStamp, defaultPrevented 
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY , screenX, screenY, offset (interview-oriented)
+    // altKey, ctrlKey, shiftKey, keyCode
+    // Event propagation : event capturing and bubbling (True and false)
+    // bubbling me neeche se upar execution just like a bubble 
+    // capturing me top se bottom jaata hai 
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("google clicked");
+    // }, false)
+
+
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+        
+        
+        
+
+    })
+    // removeIt.parentNode.removeChild(removeIt)
+    
+</script>
+</html>
